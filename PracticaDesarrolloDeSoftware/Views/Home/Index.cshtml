@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PracticaDesarrolloDeSoftware.Models.Cliente>
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1 class="text-center">CRUD CLIENTES</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="float-right">
+            <a asp-action="Crear" asp-controller="Home" class="btn btn-success"><i class="bi bi-file-plus-fill"></i> Nuevo Cliente</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Lista de Clientes</strong></h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if (Model.Count() > 0)
+                    {
+                        <table class="table table-bordered" id="tbtCliente" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(m => m.Id)</th>
+                                    <th>@Html.DisplayNameFor(m => m.Nombre)</th>
+                                    <th>@Html.DisplayNameFor(m => m.RFC)</th>
+                                    <th>@Html.DisplayNameFor(m => m.Direccion)</th>
+                                    <th>@Html.DisplayNameFor(m => m.Ciudad)</th>
+                                    <th>@Html.DisplayNameFor(m => m.CodigoPostal)</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(m => item.Id)</td>
+                                        <td>@Html.DisplayFor(m => item.Nombre)</td>
+                                        <td>@Html.DisplayFor(m => item.RFC)</td>
+                                        <td>@Html.DisplayFor(m => item.Direccion)</td>
+                                        <td>@Html.DisplayFor(m => item.Ciudad)</td>
+                                        <td>@Html.DisplayFor(m => item.CodigoPostal)</td>
+                                        <td>
+                                            <a class="btn btn-primary" asp-action="Editar" asp-route-id="@item.Id"><i class="bi bi-pencil-fill"></i> Editar</a>
+                                            <a class="btn btn-secondary" asp-action="Detalle" asp-route-id="@item.Id"><i class="bi bi-info-circle-fill"></i> Detalle</a>
+                                            <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@item.Id"><i class="bi bi-eraser-fill"></i> Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

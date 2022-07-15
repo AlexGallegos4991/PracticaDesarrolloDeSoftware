@@ -1,0 +1,27 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaDesarrolloDeSoftware.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalle Cliente";
+}
+
+<h1 class="text-center">CRUD CLIENTES</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Detalle de Cliente</strong></h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Nombre)</li>
+                    <li class="list-group-item"><strong>RFC: </strong>@Html.DisplayFor(m => m.RFC)</li>
+                    <li class="list-group-item"><strong>Direccion: </strong>@Html.DisplayFor(m => m.Direccion)</li>
+                    <li class="list-group-item"><strong>Ciudad: </strong>@Html.DisplayFor(m => m.Ciudad)</li>
+                    <li class="list-group-item"><strong>CP: </strong>@Html.DisplayFor(m => m.CodigoPostal)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

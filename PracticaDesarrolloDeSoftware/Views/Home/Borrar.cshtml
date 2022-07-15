@@ -1,0 +1,56 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaDesarrolloDeSoftware.Models.Cliente
+
+@{
+    ViewData["Title"] = "Borrar Cliente";
+}
+
+<h1 class="text-center">CRUD CLIENTES</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Borrar Cliente</strong></h3>
+            </div>
+            <div class="card-body">
+               <form asp-action="Borrar">
+
+                   <!--Id del usuario como campo oculto-->
+                   <input type="hidden" form="Id" />
+
+                   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   <div class="form-group">
+                       <label asp-for="Nombre" class="control-label"></label>
+                       <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre del cliente" />
+                       <span asp-validation-for="Nombre" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="RFC" class="control-label"></label>
+                       <input asp-for="RFC" class="form-control" placeholder="Ingrese el RFC del cliente" />
+                       <span asp-validation-for="RFC" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="Direccion" class="control-label"></label>
+                       <input asp-for="Direccion" class="form-control" placeholder="Ingrese la direccion del cliente" />
+                       <span asp-validation-for="Direccion" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="Ciudad" class="control-label"></label>
+                       <input asp-for="Ciudad" class="form-control" placeholder="Ingrese la ciudad del cliente" />
+                       <span asp-validation-for="Ciudad" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="CodigoPostal" class="control-label"></label>
+                       <input asp-for="CodigoPostal" class="form-control" placeholder="Ingrese el CP del cliente" />
+                       <span asp-validation-for="CodigoPostal" class="text-danger"></span>
+                   </div>
+
+                   <div class="form-group mt-3">
+                       <button type="submit" class="btn btn-success"><i class="bi bi-eraser-fill"></i> Borrar Cliente</button>
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
